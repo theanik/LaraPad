@@ -26,8 +26,9 @@ class CategoryRepository
      */
     public function store(Request $categoryRequest)
     {
-        $category = new Category;
-        $category->name = $categoryRequest->input('name');
+        $category = Category::firstOrCreate([
+            'name' => $categoryRequest->input('name')
+            ]);
         $category->save();
 
         return $category;
