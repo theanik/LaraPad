@@ -24,3 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Category
 Route::get('category', 'CategoryController@index')->name('category.index');
 Route::post('category', 'CategoryController@store')->name('category.store');
+
+
+// Articale
+Route::get('articale', 'ArticaleController@index')->name('articale.index');
+Route::post('articale', 'ArticaleController@store')->name('articale.store');
