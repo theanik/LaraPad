@@ -13,3 +13,5 @@
 - Cache
 - Events
 - Observer
+- Scope
+- Query Closure

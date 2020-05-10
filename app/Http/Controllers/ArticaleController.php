@@ -112,4 +112,35 @@ class ArticaleController extends Controller
     {
         //
     }
+
+    public function test()
+    {
+        /**
+         * Eloquent Magic method
+         */
+        $articale = Articale::whereTitle("Doloremque illu of")
+                            ->orWhere('category_id',3)
+                            ->whereYear('created_at', "=", date('Y'))
+                            ->first();
+        if(!$articale) abort(404); // alternative fistOrFail
+
+        /**
+         * Put bracket in a sql statement
+         */
+
+        $articaleByCategoryAndTimestamp = Articale::where('category_id',3)
+                                            ->where(function($query){
+                                                $query->whereYear('created_at', 2018)
+                                                ->orwhereYear('updated_at', 2018);
+                                                return $query;
+                                            })
+                                            ->get();
+
+        /**
+         * Using scope
+         */
+        $getLetestAtrical = Articale::getNewest($days = 20)->get();
+
+        return $getLetestAtrical;
+    }
 }
