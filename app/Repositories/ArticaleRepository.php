@@ -11,7 +11,7 @@ class ArticaleRepository
     {
         $articale = Cache::get('articale', []);
         if(!$articale){
-            $articale = Articale::paginate();
+            $articale = Articale::all();
             Cache::forever('articale', $articale);
         }
         return $articale;

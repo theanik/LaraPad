@@ -21,13 +21,20 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Category
+//Start Category
 Route::get('category', 'CategoryController@index')->name('category.index');
 Route::post('category', 'CategoryController@store')->name('category.store');
 
+// End Category
 
-// Articale
+//Start Articale
 Route::get('articale', 'ArticaleController@index')->name('articale.index');
 Route::post('articale', 'ArticaleController@store')->name('articale.store');
 
+// Eloquent
 Route::get('articale_test','ArticaleController@test');
+
+// Collection
+Route::get('articale_collection','ArticaleController@articaleCollection');
+
+// End Article

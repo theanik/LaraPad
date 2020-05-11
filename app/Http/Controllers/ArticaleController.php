@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Articale;
+use App\Category;
 use App\Http\Requests\ArticaleRequest;
 use App\Repository\ArticaleRepository;
 use App\Repository\CategoryRepository;
@@ -28,6 +29,8 @@ class ArticaleController extends Controller
     public function index()
     {
         $categories = $this->categoryModel->index();
+        $categories = $categories->shuffle()
+                    ->prepend(new Category(["id" => null,"name" => "-- Please Select A Category"]));
         $articale = $this->articaleModel->index();
 
         return view('articale.index',[
@@ -142,5 +145,33 @@ class ArticaleController extends Controller
         $getLetestAtrical = Articale::getNewest($days = 20)->get();
 
         return $getLetestAtrical;
+    }
+
+
+    public function articaleCollection()
+    {
+        $articales = $this->articaleModel->index();
+
+        // $firstArticale = $articales->first();
+
+        $articales_collect = $articales->filter(function($articale){
+            return $articale->category_id === 3;
+        });
+
+        $articaleGroup = $articales->chunk(3)->map(function($articale){
+            return $articale->map(function($articale){
+                return ["title" => $articale->title, "id" => $articale->id];
+            });
+        });
+
+    //    echo $articales->sum('id');
+    //    echo $articales->avg('id');
+    //    echo $articales->max('id');
+    //    echo $articales->min('id');
+    //    print_r($articales->mode('id'));
+    
+        // dd($articales_coll);
+
+        return $articales;
     }
 }

@@ -15,3 +15,4 @@
 - Observer
 - Scope
 - Query Closure
+- Collection
