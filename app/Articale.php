@@ -41,5 +41,15 @@ class Articale extends Model
     {
         $qyery->where('created_at', '>' , now()->subDays($days));
         return $qyery;
-    }   
+    }
+    
+    /**
+     * category
+     *
+     * @return void
+     */
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

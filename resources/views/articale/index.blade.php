@@ -30,6 +30,7 @@
                       <tr>
                         <th scope="col">SL</th>
                         <th scope="col">Title</th>
+                        <th scope="col">Category</th>
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
@@ -38,6 +39,7 @@
                             <tr>
                                 <td>{{$key + 1}}</td>
                                 <td>{{ $item->title }}</td>
+                                <td>{{ $item->category->name }}</td>
                                 <td>Action</td>
                             </tr>     
                         @endforeach

@@ -1,9 +1,9 @@
 <?php
 
-use App\Articale;
+use App\Category;
 use Illuminate\Database\Seeder;
 
-class ArticaleSeeder extends Seeder
+class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class ArticaleSeeder extends Seeder
      */
     public function run()
     {
-        factory(Articale::class, 200)->create();
+        factory(Category::class, 10)->create();
     }
 }
