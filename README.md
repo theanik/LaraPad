@@ -16,3 +16,7 @@
 - Scope
 - Query Closure
 - Collection
+- Mail
+- Queue
+- Job
+- Notification

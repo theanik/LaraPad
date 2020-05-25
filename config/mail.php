@@ -12,6 +12,16 @@ return [
     | and used as needed; however, this mailer will be used by default.
     |
     */
+    "driver" => "smtp",
+    "host" => "smtp.mailtrap.io",
+    "port" => 2525,
+    "from" => array(
+        "address" => "from@example.com",
+        "name" => "Example"
+    ),
+    "username" => "bea45f047eeb60",
+    "password" => "0532ce0a4dfbf7",
+    "sendmail" => "/usr/sbin/sendmail -bs",
 
     'default' => env('MAIL_MAILER', 'smtp'),
 
