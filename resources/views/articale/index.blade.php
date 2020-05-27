@@ -39,7 +39,7 @@
                             <tr>
                                 <td>{{$key + 1}}</td>
                                 <td>{{ $item->title }}</td>
-                                <td>{{ $item->category->name }}</td>
+                                <td>{!! higtLight($item->category->name) !!}</td>
                                 <td>Action</td>
                             </tr>     
                         @endforeach

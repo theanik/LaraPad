@@ -4,9 +4,15 @@
 **Touched Thing are...**
 
 
-###### OOP
+###### OOP Principle
 - Single Responsibility Principle(SRP)
-- Repository Pattren 
+
+###### Design Pattren And App Structure
+- Repository Pattren
+- Service
+- Custom Global Helper
+- Extra PHP Classes
+- Autoloading
 
 ###### Laravel
 - Mutator
