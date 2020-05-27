@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Articale;
 use App\Category;
+use Illuminate\Http\Request;
+use App\Services\AtricateServices;
 use App\Http\Requests\ArticaleRequest;
 use App\Repository\ArticaleRepository;
 use App\Repository\CategoryRepository;
-use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
 class ArticaleController extends Controller
@@ -173,5 +174,11 @@ class ArticaleController extends Controller
         // dd($articales_coll);
 
         return $articales;
+    }
+
+    public function articaleFilter(AtricateServices $articaleService)
+    {
+        $articale = $articaleService->getFilterArticale();
+        return $articale;
     }
 }

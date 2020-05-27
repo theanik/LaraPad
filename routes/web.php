@@ -36,5 +36,7 @@ Route::get('articale_test','ArticaleController@test');
 
 // Collection
 Route::get('articale_collection','ArticaleController@articaleCollection');
+// ^ service
+Route::get('articale_filter','ArticaleController@articaleFilter');
 
 // End Article
