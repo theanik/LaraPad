@@ -2,12 +2,13 @@
 
 namespace App;
 
+use App\Traits\Fileable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
 class Articale extends Model
 {
-    use Notifiable;
+    use Notifiable, Fileable;
     protected $guarded = [];
     
     /**

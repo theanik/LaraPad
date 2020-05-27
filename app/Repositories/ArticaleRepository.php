@@ -30,6 +30,8 @@ class ArticaleRepository
         ]);
         $articale->body = $articaleRequest->input('body');
         $articale->category_id = $articaleRequest->input('category_id');
+        // testing traits
+        $articale->fileUpload("hello.png");
         $articale->save();
         auth()->user()->notify(new ArticaleAuthorNotification($articale));
         NewArticaleJob::dispatch($articale);
