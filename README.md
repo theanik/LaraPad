@@ -13,7 +13,7 @@
 - Custom Global Helper
 - Extra PHP Classes
 - Autoloading
-
+- Trait
 ###### Laravel
 - Mutator
 - Cache
