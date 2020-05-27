@@ -94,6 +94,40 @@
                 {{-- end modal --}}
             </div>
         </div>
+        <div class="col-md-2">
+          {{-- Category Start --}}
+            <div class="card">
+              <div class="card-header">
+                Category
+              </div>
+
+              <div class="card-body">
+                <ul>
+                  @foreach ($categories as $item)
+                    <li><a href="">{{ $item->name }}</a></li> 
+                  @endforeach
+                </ul>
+              </div>
+            </div>
+            {{-- Category End --}}
+
+          {{-- Tag Start --}}
+            <div class="card">
+              <div class="card-header">
+                Tag
+              </div>
+
+              <div class="card-body">
+                <ul>
+                  @foreach ($tags as $item)
+                    <li><a href="">{{ $item->name }}</a></li> 
+                  @endforeach
+                </ul>
+              </div>
+            </div>
+            {{-- Tag End --}}
+
+        </div>
     </div>
 </div>
 @endsection

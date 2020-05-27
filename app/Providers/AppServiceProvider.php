@@ -7,7 +7,7 @@ use App\Category;
 use App\Observers\ArticaleObserver;
 use App\Observers\CategoryObserver;
 use Illuminate\Support\ServiceProvider;
-
+use App\Tag;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -30,5 +30,12 @@ class AppServiceProvider extends ServiceProvider
     {
         Category::observe(CategoryObserver::class);
         Articale::observe(ArticaleObserver::class);
+
+        // wildcart route
+
+        view()->composer('*', function($view){
+            $view->with('tags',Tag::all());
+            $view->with('categories',Category::all());
+        });
     }
 }

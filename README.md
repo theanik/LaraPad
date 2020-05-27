@@ -14,6 +14,7 @@
 - Extra PHP Classes
 - Autoloading
 - Trait
+
 ###### Laravel
 - Mutator
 - Cache
@@ -26,3 +27,4 @@
 - Queue
 - Job
 - Notification
+- wildcard
