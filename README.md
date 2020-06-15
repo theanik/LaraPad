@@ -1,10 +1,10 @@
 ## LaraPad
 ###### Laravel Advance Topic | Best Practice | Exprement Repo
 
-**Touched Thing are...**
+**Touched Thing's are...**
 
 
-###### OOP Principle
+###### SOLID Principle
 - Single Responsibility Principle(SRP)
 
 ###### Design Pattren And App Structure
@@ -28,3 +28,4 @@
 - Job
 - Notification
 - wildcard
+- Redis
