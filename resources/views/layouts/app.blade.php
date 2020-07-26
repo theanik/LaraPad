@@ -50,6 +50,21 @@
                                 </li>
                             @endif
                         @else
+                        <li>
+                            <div class="btn-group dropleft">
+                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  5
+                                </button>
+                                <div class="dropdown-menu">
+                                    <span class="dropdown-item">Notification</span>
+                                    <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action Another action Another actionAnother actionAnother action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                  <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                              </div>
+                        </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -67,6 +82,7 @@
                                     </form>
                                 </div>
                             </li>
+                           
                         @endguest
                     </ul>
                 </div>
