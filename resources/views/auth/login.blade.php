@@ -3,12 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    {{-- <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -63,6 +63,39 @@
                                     </a>
                                 @endif
                             </div>
+                        </div>
+                    </form> --}}
+
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+                        <h2 class="text-center">Sign in</h2>   
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <span class="fa fa-user"></span>
+                                    </span>                    
+                                </div>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email" required="required" autocomplete="off">              
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-lock"></i>
+                                    </span>                    
+                                </div>
+                                <input type="password" class="form-control  @error('password') is-invalid @enderror" name="password" placeholder="Password" required="required">                
+                            </div>
+                        </div>
+
+                        <div style="text-align: center"><i>or</i></div>
+                        <hr>
+                        <p class="text-center">Login with your social media account</p>
+                        <div class="text-center social-btn">
+                            <a href="{{ route('login.facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i>&nbsp; Facebook</a>
+                            <a href="{{ route('login.github') }}" class="btn btn-success"><i class="fa fa-github"></i>&nbsp; GitHUB</a>
                         </div>
                     </form>
                 </div>

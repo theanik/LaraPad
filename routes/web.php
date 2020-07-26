@@ -18,6 +18,15 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+// socalite
+Route::namespace('Auth')->group(function () {
+    Route::get('auth/facebook/redirect','SocialiteController@redirectToFacebook')->name('login.facebook');
+    Route::get('auth/facebook/callback','SocialiteController@handleFacebookCallback');
+
+    Route::get('auth/github/redirect','SocialiteController@redirectToGithub')->name('login.github');
+    Route::get('auth/github/callback','SocialiteController@handleGithubCallback');
+    
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 
