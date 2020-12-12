@@ -33,8 +33,8 @@ class ArticaleRepository
         // testing traits
         $articale->fileUpload("hello.png");
         $articale->save();
-        auth()->user()->notify(new ArticaleAuthorNotification($articale));
-        NewArticaleJob::dispatch($articale);
+        // auth()->user()->notify(new ArticaleAuthorNotification($articale));
+        // NewArticaleJob::dispatch($articale);
         return $articale;
     }
 

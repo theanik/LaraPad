@@ -35,6 +35,7 @@
                       </tr>
                     </thead>
                     <tbody>
+                      @if(count($articales) > 0)
                         @foreach ($articales as $key=>$item)
                             <tr>
                                 <td>{{$key + 1}}</td>
@@ -43,6 +44,10 @@
                                 <td>Action</td>
                             </tr>     
                         @endforeach
+                      @else
+
+                      <p>No artical here</p>
+                      @endif
                        
                     </tbody>
                     {{-- <input type="hidden" name="hidden_page" id="hidden_page" value="1" /> --}}

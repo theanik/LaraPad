@@ -19,7 +19,7 @@ class CreateArticalesTable extends Migration
             $table->text("title");
             $table->text("slug");
             $table->longtext("body");
-            $table->integer('created_by');
+            $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();
         });

@@ -32,10 +32,10 @@ class ArticaleController extends Controller
         $categories = $this->categoryModel->index();
         $categories = $categories->shuffle()
                     ->prepend(new Category(["id" => null,"name" => "-- Please Select A Category"]));
-        $articale = $this->articaleModel->index();
+        $articales = $this->articaleModel->index();
 
         return view('articale.index',[
-            'articales' => $articale,
+            'articales' => $articales,
             'categories' => $categories
         ]);
     }
