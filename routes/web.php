@@ -37,8 +37,11 @@ Route::post('category', 'CategoryController@store')->name('category.store');
 // End Category
 
 //Start Articale
-Route::get('articale', 'ArticaleController@index')->name('articale.index');
-Route::post('articale', 'ArticaleController@store')->name('articale.store');
+Route::middleware('auth')->group(function(){
+	Route::get('articale', 'ArticaleController@index')->name('articale.index');
+	Route::post('articale', 'ArticaleController@store')->name('articale.store');
+});
+
 
 // Eloquent
 Route::get('articale_test','ArticaleController@test');

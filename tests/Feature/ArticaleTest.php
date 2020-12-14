@@ -6,11 +6,24 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use App\Articale;
 use App\Category;
+use App\User;
 use Tests\TestCase;
 
 class ArticaleTest extends TestCase
 {
     use RefreshDatabase;
+
+    public $email;
+    public $password;
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->email = 'test@aa.aa';
+        $this->email = 'test1234';
+    }
+
     /**
      * A basic feature test example.
      *
@@ -18,7 +31,9 @@ class ArticaleTest extends TestCase
      */
     public function test_articalpage_contains_empty_articals_table()
     {
-        $response = $this->get('/articale');
+        $user = $this->createAUser();
+
+        $response = $this->actingAs($user)->get('/articale');
 
          $response->assertStatus(200);
 
@@ -43,7 +58,9 @@ class ArticaleTest extends TestCase
             'created_by' => 1
         ]);
 
-        $response = $this->get('/articale');
+        $user = $this->createAUser();
+
+        $response = $this->actingAs($user)->get('/articale');
 
         $response->assertDontSeeText("No artical here");
 
@@ -56,8 +73,15 @@ class ArticaleTest extends TestCase
         // dd($articale_view);
         $this->assertEquals($articale->title, $articale_view->first()->title);
         $response->assertStatus(200);
-        
+    }
 
-       
+
+    public function createAUser()
+    {
+        return User::create([
+            'name' => 'Test User',
+            'email' => $this->email,
+            'password' => bcrypt($this->password)
+        ]);
     }
 }
