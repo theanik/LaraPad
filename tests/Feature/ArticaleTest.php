@@ -21,7 +21,7 @@ class ArticaleTest extends TestCase
     {
         parent::__construct();
         $this->email = 'test@aa.aa';
-        $this->email = 'test1234';
+        $this->password = 'test1234';
     }
 
     /**
