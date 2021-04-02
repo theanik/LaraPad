@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    {{-- <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -64,9 +64,9 @@
                                 @endif
                             </div>
                         </div>
-                    </form> --}}
+                    </form>
 
-                    <form method="POST" action="{{ route('login') }}">
+                   <!--  <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <h2 class="text-center">Sign in</h2>   
                         <div class="form-group">
@@ -79,6 +79,11 @@
                                 <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email" required="required" autocomplete="off">              
                             </div>
                         </div>
+                         @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -89,6 +94,11 @@
                                 <input type="password" class="form-control  @error('password') is-invalid @enderror" name="password" placeholder="Password" required="required">                
                             </div>
                         </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary">
+                                    {{ __('Login') }}
+                                </button>
+                        </div>
 
                         <div style="text-align: center"><i>or</i></div>
                         <hr>
@@ -97,7 +107,7 @@
                             <a href="{{ route('login.facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i>&nbsp; Facebook</a>
                             <a href="{{ route('login.github') }}" class="btn btn-success"><i class="fa fa-github"></i>&nbsp; GitHUB</a>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>
